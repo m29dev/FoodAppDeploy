@@ -4,7 +4,13 @@
   align-items: center;
 }
 
+.active-item {
+  color: rgb(255, 192, 1);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+}
+
 .search-bar {
+  font-family: "Kalam", cursive;
   max-width: 540px;
   border-radius: 18px;
   margin-top: 10px;
@@ -32,6 +38,7 @@
 }
 
 .item {
+  font-family: "Kalam", cursive;
   display: flex;
   flex-direction: column;
   justify-content: center;

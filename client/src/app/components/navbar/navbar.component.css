@@ -1,14 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
 .navbar {
   height: 70px;
 }
 
-.container-fluid {
-  padding: 0px 100px;
+.title-box {
+  font-family: "Chewy", cursive;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* nth */
 }
 
 .navbar-brand {
-  cursor: pointer;
-  font-weight: 500;
+  color: rgb(255, 192, 1);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  font-size: 25px;
+}
+
+.icon {
+  margin-right: 7px;
+  width: 25px;
+  height: 25px;
+}
+
+.container-fluid {
+  padding: 0px 100px;
 }
 
 .container-fluid {

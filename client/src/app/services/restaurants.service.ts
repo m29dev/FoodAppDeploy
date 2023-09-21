@@ -33,5 +33,22 @@ export class RestaurantsService {
     this.onFilter.next(restaurants);
   }
 
+  filterRestaurantsType(restaurants: any, queries: any) {
+    let restaurantsType: any = [];
+
+    // for each query check in each restaurant if match the type
+    queries.forEach((type: any) => {
+      restaurants.forEach((restaurant: any) => {
+        if (type === restaurant.type) {
+          restaurantsType.push(restaurant);
+        }
+      });
+    });
+
+    console.log(restaurantsType);
+
+    this.onFilter.next(restaurantsType);
+  }
+
   onFilter = new Subject<any>();
 }

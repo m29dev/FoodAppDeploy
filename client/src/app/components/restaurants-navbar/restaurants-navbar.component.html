@@ -34,7 +34,12 @@
       <div class="carousel-item active">
         <div class="type-box">
           <!-- pizza -->
-          <div class="item pizza">
+          <div
+            #itemPizza
+            name="pizza"
+            class="item pizza"
+            (click)="activateItemFilter(itemPizza, 'pizza')"
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/6978/6978255.png"
               alt=""
@@ -43,7 +48,12 @@
           </div>
 
           <!-- burger -->
-          <div class="item burger">
+          <div
+            #itemBurger
+            name="burger"
+            class="item burger"
+            (click)="activateItemFilter(itemBurger, 'burger')"
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/198/198416.png"
               alt=""
@@ -52,7 +62,12 @@
           </div>
 
           <!-- kebab -->
-          <div class="item kebab">
+          <div
+            #itemKebab
+            name="kebab"
+            class="item kebab"
+            (click)="activateItemFilter(itemKebab, 'kebab')"
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/2836/2836575.png"
               alt=""
@@ -61,7 +76,12 @@
           </div>
 
           <!-- asian -->
-          <div class="item asian">
+          <div
+            #itemAsian
+            name="asian"
+            class="item asian"
+            (click)="activateItemFilter(itemAsian, 'asian')"
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/1046/1046791.png"
               alt=""
