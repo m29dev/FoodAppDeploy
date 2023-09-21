@@ -160,6 +160,7 @@ h5 {
   .price-style,
   .quantity-value {
     font-size: 18px;
+    font-weight: 400;
   }
 
   svg {
