@@ -1,0 +1,58 @@
+.navbar {
+  height: 70px;
+}
+
+.container-fluid {
+  padding: 0px 100px;
+}
+
+.navbar-brand {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.container-fluid {
+  flex-wrap: nowrap;
+}
+
+.btn {
+  margin-left: 12px;
+}
+
+.sign-out {
+  display: flex;
+  align-items: center;
+}
+
+.sign-out p {
+  margin: 0;
+}
+
+.dropdown-item-style {
+  cursor: pointer;
+}
+
+.dp-style {
+  width: 190px;
+}
+
+.bi-dropdown {
+  margin-right: 4px;
+}
+
+.bi-navi {
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.btn-style {
+  width: 25px;
+  height: 25px;
+  margin-right: 18px;
+}
+
+@media screen and (max-width: 500px) {
+  .container-fluid {
+    padding: 0px 12px;
+  }
+}

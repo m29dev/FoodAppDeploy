@@ -1,0 +1,17 @@
+.box-outer {
+  min-height: 100%;
+}
+
+.box-inner {
+  padding-bottom: 36px;
+}
+
+.box-footer {
+  height: 24px;
+  margin-top: -36px;
+}
+
+.content-footer {
+  margin: 0 auto;
+  text-align: center;
+}

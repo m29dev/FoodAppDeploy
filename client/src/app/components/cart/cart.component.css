@@ -1,0 +1,165 @@
+section {
+  padding: 0px;
+  margin: 12px 0px 12px 0px;
+}
+
+h1,
+h2 {
+  padding: 0px 8px 0px 8px;
+}
+
+.container-init {
+  padding: 0px 0px 0px 12px;
+}
+
+.reset-padding {
+  padding: 0px;
+}
+
+.cart-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.cart-navbar h1 {
+  padding: 0px;
+  margin: 0px;
+  margin-right: 18px;
+}
+
+.restaurant-navbar {
+  padding: 12px 0px 0px 12px;
+  margin: 0px;
+}
+
+.img-cart-box {
+  width: 150px;
+  height: 150px;
+  padding: 0px;
+  border: solid 1px rgb(237, 237, 237);
+  border-radius: 18px 18px 18px 18px;
+}
+
+.img-cart-box-sidebar {
+  width: 80px;
+  height: 80px;
+  padding: 0px;
+  border: solid 1px rgb(237, 237, 237);
+  border-radius: 18px 18px 18px 18px;
+}
+
+.img-cart {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px 18px 18px 18px;
+}
+
+.img-cart-sidebar {
+  width: 80px;
+  height: 80px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px 18px 18px 18px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-name {
+  margin-left: 18px;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-value {
+  font-size: 25px;
+  margin-right: 9px;
+}
+
+.bi {
+  margin-right: 9px;
+  cursor: pointer;
+}
+
+.price-style {
+  font-size: 25px;
+}
+
+.quantity-sidebar {
+  font-size: 23px;
+  margin: 0px;
+  margin-right: 9px;
+}
+
+@media screen and (max-width: 500px) {
+  section {
+    width: 100%;
+  }
+
+  .container-init {
+    padding: 0px;
+  }
+
+  .container.mob {
+    padding: 12px;
+  }
+
+  .mob {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  div.img-cart-box {
+    width: 80px;
+    height: 80px;
+  }
+
+  img.img-cart {
+    width: 80px;
+    height: 80px;
+  }
+
+  .item-name h4,
+  p {
+    font-size: 12px;
+  }
+
+  .price-style,
+  .quantity-value {
+    font-size: 18px;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .img-cart-box {
+    width: 100px;
+    height: 100px;
+  }
+
+  .img-cart {
+    width: 100px;
+    height: 100px;
+  }
+
+  .price-style,
+  .quantity-value {
+    font-size: 18px;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}

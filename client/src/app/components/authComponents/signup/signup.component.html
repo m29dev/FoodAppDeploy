@@ -1,0 +1,43 @@
+<div class="container-init">
+  <form
+    class="row auth-form"
+    #signUpForm="ngForm"
+    (submit)="onSubmit(signUpForm)"
+  >
+    <div>
+      <h1>Sign up</h1>
+    </div>
+
+    <div class="">
+      <label for="email" class="form-label">email</label>
+      <input type="email" class="form-control" name="email" ngModel />
+    </div>
+
+    <div class="">
+      <label for="password" class="form-label">password</label>
+      <input
+        type="password"
+        class="form-control"
+        minlength="7"
+        name="password"
+        ngModel
+      />
+      <div class="form-text">Password must be at least 7 characters long</div>
+    </div>
+
+    <div class="">
+      <label for="passwordConfirm" class="form-label">confirm password</label>
+      <input
+        type="password"
+        class="form-control"
+        minlength="7"
+        name="passwordConfirm"
+        ngModel
+      />
+    </div>
+
+    <div style="display: flex; justify-content: center">
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+  </form>
+</div>

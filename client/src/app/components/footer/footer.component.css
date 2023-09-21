@@ -1,0 +1,17 @@
+.footer-box {
+  border: 0px;
+}
+
+.app-name {
+  margin: 16px;
+  text-align: center;
+}
+
+.social-media-box {
+  display: flex;
+  justify-content: center;
+}
+
+.bi {
+  cursor: pointer;
+}

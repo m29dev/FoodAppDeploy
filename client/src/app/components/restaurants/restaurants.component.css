@@ -1,0 +1,30 @@
+.nav-feed-box {
+  width: 100%;
+}
+
+.container-init {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-feed-cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cart-box {
+  width: 600px;
+}
+
+@media screen and (max-width: 500px) {
+  .container-init {
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .cart-box {
+    display: none;
+  }
+}

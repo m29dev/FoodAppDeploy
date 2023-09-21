@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="box-outer">
+  <div class="box-inner">
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+  </div>
+</div>
+
+<div class="box-footer">
+  <div class="content-footer">
+    <app-footer></app-footer>
+  </div>
+</div>

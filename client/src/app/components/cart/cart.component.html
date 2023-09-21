@@ -1,0 +1,416 @@
+<section style="display: none">
+  <div class="container">
+    <div class="row w-100">
+      <div class="col-lg-12 col-md-12 col-12 reset-padding">
+        <!-- if items in the cart -->
+        <table id="shoppingCart" class="table table-condensed table-responsive">
+          <thead>
+            <tr>
+              <th style="width: 60%">Product</th>
+              <th style="width: 30%">Price</th>
+              <th style="width: 10%">Quantity</th>
+            </tr>
+          </thead>
+
+          <tbody *ngIf="cart?.length <= 0">
+            <!-- if no items in the cart -->
+            <tr>
+              <td data-th="Product">
+                <div class="item-info">
+                  <p class="font-weight-light">Cart is empty</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody *ngIf="cart?.length > 0">
+            <!-- cart items -->
+            <tr *ngFor="let item of cart">
+              <td data-th="Product">
+                <div class="item-info">
+                  <div class="col-md-3 text-left img-cart-box" *ngIf="!sidebar">
+                    <!-- item image -->
+                    <img src="{{ item?.image }}" class="img-cart" alt="" />
+                  </div>
+
+                  <div
+                    class="col-md-3 text-left img-cart-box-sidebar"
+                    *ngIf="sidebar"
+                  >
+                    <!-- item image -->
+                    <img src="{{ item?.image }}" class="img-cart" alt="" />
+                  </div>
+
+                  <!-- item name, item brand -->
+                  <div class="col-md-9 text-left mt-sm-2 item-name">
+                    <h4>{{ item?.name }}</h4>
+                    <p class="font-weight-light">{{ item?.restaurant }}</p>
+                  </div>
+                </div>
+              </td>
+              <td data-th="Price" class="price-style">
+                {{ item?.price }}.00 zł
+              </td>
+
+              <!-- quantity box -->
+              <td data-th="Quantity">
+                <div class="quantity-box">
+                  <!-- display value -->
+                  <div class="quantity-value">{{ item?.quantity }}</div>
+
+                  <!-- increase btn -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-plus-circle"
+                    viewBox="0 0 16 16"
+                    (click)="onPlus(item)"
+                  >
+                    <path
+                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                      d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                    />
+                  </svg>
+
+                  <!-- decrease value -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-dash-circle"
+                    viewBox="0 0 16 16"
+                    (click)="onMinus(item)"
+                  >
+                    <path
+                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                      d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                    />
+                  </svg>
+
+                  <!-- btn remove -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-x-square"
+                    viewBox="0 0 16 16"
+                    (click)="onItemRemove(item)"
+                  >
+                    <path
+                      d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                    />
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                    />
+                  </svg>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- total box -->
+        <div class="float-right text-right" *ngIf="cart?.length > 0">
+          <h4>Subtotal:</h4>
+
+          <!-- total cost -->
+          <h1>{{ fullPrice }}.00 pln</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- submit order -->
+    <div class="row mt-4 d-flex align-items-center" *ngIf="cart && !sidebar">
+      <div class="col-sm-6 order-md-2 text-right">
+        <a class="btn btn-primary mb-4 btn-lg pl-5 pr-5" (click)="onBuy()"
+          >Submit order</a
+        >
+      </div>
+    </div>
+
+    <!-- go to the checkout -->
+    <div
+      class="row mt-4 d-flex align-items-center"
+      *ngIf="cart && sidebar && cart.length > 0"
+    >
+      <div class="col-sm-6 order-md-2 text-right">
+        <a class="btn btn-primary mb-4 btn-lg pl-5 pr-5" (click)="onCheckout()"
+          >Checkout</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- next gen -->
+<div class="container-fluid container-init">
+  <section>
+    <div class="container mob">
+      <div class="row w-100 mob">
+        <div class="col-lg-12 col-md-12 col-12 mob">
+          <!-- cart navbar -->
+          <div class="cart-navbar">
+            <h1>Koszyk</h1>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="35"
+              fill="currentColor"
+              class="bi bi-cart"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+              />
+            </svg>
+          </div>
+
+          <!-- display if cart is empty or does not exist -->
+          <div *ngIf="!cart || cart.length === 0">
+            <table>
+              <h5>Cart is empty</h5>
+              <hr />
+            </table>
+          </div>
+
+          <!-- for each restaurant display table with items -->
+          <div *ngFor="let resCart of cart">
+            <!-- restaurant navbar -->
+            <h3 class="restaurant-navbar">{{ resCart.restaurant }}</h3>
+
+            <!-- if items in the cart -->
+            <table
+              id="shoppingCart"
+              class="table table-condensed table-responsive"
+            >
+              <thead>
+                <tr>
+                  <th style="width: 70%"></th>
+                  <th style="width: 20%"></th>
+                  <th style="width: 10%"></th>
+                </tr>
+              </thead>
+
+              <tbody *ngIf="cart?.length <= 0">
+                <!-- if no items in the cart -->
+                <tr>
+                  <td data-th="Product">
+                    <div class="item-info">
+                      <p class="font-weight-light">Cart is empty</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+
+              <tbody *ngIf="cart?.length > 0">
+                <!-- cart items -->
+                <tr *ngFor="let item of resCart.items">
+                  <td data-th="Product">
+                    <div class="item-info">
+                      <div class="img-cart-box" *ngIf="!sidebar">
+                        <!-- item image -->
+                        <img src="{{ item?.image }}" class="img-cart" alt="" />
+                      </div>
+
+                      <div class="img-cart-box-sidebar" *ngIf="sidebar">
+                        <!-- item image -->
+                        <img
+                          src="{{ item?.image }}"
+                          class="img-cart-sidebar"
+                          alt=""
+                        />
+                      </div>
+
+                      <!-- item name, item brand -->
+                      <div class="col-md-9 text-left mt-sm-2 item-name">
+                        <h4>{{ item?.name }}</h4>
+                        <p class="font-weight-light">{{ item?.restaurant }}</p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- item price & quantity in one box while displaying as the sidebar -->
+                  <td data-th="Price" *ngIf="sidebar"></td>
+                  <td data-th="Quantity" class="price-style" *ngIf="sidebar">
+                    <div class="col-md-9 text-left mt-sm-2 item-name">
+                      <!-- item price -->
+                      <h4>{{ item?.price }}.00 zł</h4>
+
+                      <!-- quantity box -->
+                      <div class="quantity-box">
+                        <!-- display value -->
+                        <p class="quantity-sidebar">
+                          {{ item?.quantity }}
+                        </p>
+
+                        <!-- increase btn -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="25"
+                          height="25"
+                          fill="currentColor"
+                          class="bi bi-plus-circle"
+                          viewBox="0 0 16 16"
+                          (click)="onPlus(item)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                          />
+                        </svg>
+
+                        <!-- decrease value -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="25"
+                          height="25"
+                          fill="currentColor"
+                          class="bi bi-dash-circle"
+                          viewBox="0 0 16 16"
+                          (click)="onMinus(item)"
+                        >
+                          <path
+                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                          />
+                          <path
+                            d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                          />
+                        </svg>
+
+                        <!-- btn remove -->
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="25"
+                          height="25"
+                          fill="currentColor"
+                          class="bi bi-x-square"
+                          viewBox="0 0 16 16"
+                          (click)="onItemRemove(item)"
+                        >
+                          <path
+                            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                          />
+                          <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- item price -->
+                  <td data-th="Price" class="price-style" *ngIf="!sidebar">
+                    {{ item?.price }}.00 zł
+                  </td>
+
+                  <!-- quantity box -->
+                  <td data-th="Quantity" *ngIf="!sidebar">
+                    <div class="quantity-box">
+                      <!-- display value -->
+                      <div class="quantity-value">{{ item?.quantity }}</div>
+
+                      <!-- increase btn -->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        fill="currentColor"
+                        class="bi bi-plus-circle"
+                        viewBox="0 0 16 16"
+                        (click)="onPlus(item)"
+                      >
+                        <path
+                          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                        />
+                        <path
+                          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                        />
+                      </svg>
+
+                      <!-- decrease value -->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        fill="currentColor"
+                        class="bi bi-dash-circle"
+                        viewBox="0 0 16 16"
+                        (click)="onMinus(item)"
+                      >
+                        <path
+                          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                        />
+                        <path
+                          d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                        />
+                      </svg>
+
+                      <!-- btn remove -->
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="25"
+                        height="25"
+                        fill="currentColor"
+                        class="bi bi-x-square"
+                        viewBox="0 0 16 16"
+                        (click)="onItemRemove(item)"
+                      >
+                        <path
+                          d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                        />
+                        <path
+                          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- total box -->
+          <div class="float-right text-right" *ngIf="cart?.length > 0">
+            <h2>total:</h2>
+
+            <!-- total cost -->
+            <h1>{{ fullPrice }}.00 pln</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- submit order -->
+      <div class="row mt-4 d-flex align-items-center" *ngIf="cart && !sidebar">
+        <div class="col-sm-6 order-md-2 text-right">
+          <a class="btn btn-primary mb-4 btn-lg pl-5 pr-5" (click)="onBuy()"
+            >Submit order</a
+          >
+        </div>
+      </div>
+
+      <!-- go to the checkout -->
+      <div
+        class="row mt-4 d-flex align-items-center"
+        *ngIf="cart && sidebar && cart.length > 0"
+      >
+        <div class="col-sm-6 order-md-2 text-right">
+          <a
+            class="btn btn-primary mb-4 btn-lg pl-5 pr-5"
+            (click)="onCheckout()"
+            >Checkout</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

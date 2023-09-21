@@ -1,0 +1,12 @@
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-box {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

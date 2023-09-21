@@ -1,0 +1,30 @@
+<div class="container-fluid container-init">
+  <div class="container mob">
+    <div *ngFor="let order of userOrders">
+      <div class="box">
+        <div>
+          <h4>{{ order.restaurant }}, {{ order.createdAt | date }}</h4>
+          <div *ngFor="let item of order.items">
+            <h6>
+              {{ item.name }}, {{ item.price }}.00zł, x{{ item.quantity }}
+            </h6>
+          </div>
+        </div>
+
+        <!-- if not paid -->
+        <div class="btn-box" *ngIf="!order.paid">
+          <button class="btn btn-primary" (click)="onPay(order.paymentUrl)">
+            Pay
+          </button>
+        </div>
+
+        <!-- if paid -->
+        <div class="btn-box" *ngIf="order.paid">
+          <button class="btn btn-secondary" disabled>Paid</button>
+        </div>
+      </div>
+      <hr />
+      <br />
+    </div>
+  </div>
+</div>

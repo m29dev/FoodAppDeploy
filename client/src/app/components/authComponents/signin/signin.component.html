@@ -1,0 +1,21 @@
+<div class="container-init">
+  <form class="row auth-form" #authForm="ngForm" (submit)="onSubmit(authForm)">
+    <div>
+      <h1>Sign in</h1>
+    </div>
+
+    <div class="">
+      <label for="email" class="form-label">email</label>
+      <input type="text" class="form-control" name="email" ngModel />
+    </div>
+
+    <div class="">
+      <label for="password" class="form-label">password</label>
+      <input type="password" class="form-control" name="password" ngModel />
+    </div>
+
+    <div style="display: flex; justify-content: center">
+      <button type="submit" class="btn btn-light">Submit</button>
+    </div>
+  </form>
+</div>

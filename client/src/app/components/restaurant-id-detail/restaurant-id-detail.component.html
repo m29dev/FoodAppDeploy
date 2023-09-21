@@ -1,0 +1,146 @@
+<div class="container-fluid container-init">
+  <div class="loading-mode" *ngIf="!restaurantDetail">
+    <span class="sr-only spinner-border" role="status"></span>
+  </div>
+
+  <div class="details-box" *ngIf="restaurantDetail">
+    <div class="card item-grid">
+      <img
+        class="card-img-top"
+        src="{{ restaurantDetail?.image }}"
+        alt="Card image cap"
+      />
+
+      <div class="account-image">
+        <img
+          class="rounded-circle"
+          style="width: 150px; height: 150px"
+          src="{{ restaurantDetail?.logo }}"
+          alt=""
+        />
+      </div>
+
+      <div class="restaurant-name-box">
+        <h5 class="restaurant-name">
+          {{ restaurantDetail?.restaurant | slice : 0 : 25 }}
+        </h5>
+      </div>
+
+      <div class="card-box">
+        <!-- <h5 class="card-title">
+          {{ restaurantDetail?.restaurant | slice : 0 : 25 }}
+        </h5> -->
+      </div>
+    </div>
+
+    <br />
+
+    <!-- menu -->
+    <div class="background-gird">
+      <div class="grid">
+        <div
+          class="item card-alike-style"
+          (click)="onAddToCart(item, quantity)"
+          *ngFor="let item of restaurantDetail?.menu"
+        >
+          <!-- item image -->
+          <div class="item-image-box">
+            <img class="item-image" src="{{ item.image }}" alt="" />
+          </div>
+
+          <!-- item info -->
+          <div class="item-info">
+            <!-- item name -->
+            <h3>{{ item.name }}</h3>
+
+            <!-- item price -->
+            <h4>{{ item.price }},00 zł</h4>
+          </div>
+
+          <div class="flex-grow"></div>
+
+          <!-- Cart SVG -->
+          <div class="cart-svg-box">
+            <svg
+              class="cart-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-plus"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+              />
+            </svg>
+          </div>
+
+          <!-- NONE DISPLAY -->
+          <div class="item-info-second" style="display: none">
+            <!-- quantity box -->
+            <div class="quantity-box">
+              <!-- display value -->
+              <div class="quantity-value">{{ quantity.value }}</div>
+
+              <input
+                type="text"
+                style="display: none"
+                #quantity
+                value="1"
+                min="1"
+              />
+
+              <!-- increase btn -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                fill="currentColor"
+                class="bi bi-plus-circle"
+                viewBox="0 0 16 16"
+                (click)="onPlus(quantity)"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                />
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                />
+              </svg>
+
+              <!-- decrease value -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                fill="currentColor"
+                class="bi bi-dash-circle"
+                viewBox="0 0 16 16"
+                (click)="onMinus(quantity)"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                />
+                <path
+                  d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                />
+              </svg>
+            </div>
+
+            <!-- add item to the cart btn -->
+            <div class="btn btn-primary" (click)="onAddToCart(item, quantity)">
+              Add to cart
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- cart bar -->
+  <!-- <app-cart-bar></app-cart-bar> -->
+  <div class="cart-box">
+    <app-cart [sidebar]="true"></app-cart>
+  </div>
+</div>

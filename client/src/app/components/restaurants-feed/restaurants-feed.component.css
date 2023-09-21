@@ -1,0 +1,203 @@
+.container-feed-grid {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 49% 49%;
+  column-gap: 18px;
+  row-gap: 30px;
+  margin: 0px;
+  margin-top: 30px;
+}
+
+.box-spinner {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.item-grid {
+  cursor: pointer;
+}
+
+.item-grid img {
+  width: 100%;
+  height: 250px;
+  /* aspect-ratio: 1 / 1;  */
+  object-fit: cover;
+}
+
+.card {
+  border-color: rgb(234, 234, 234);
+  /* border: 0px; */
+}
+
+.card-title {
+  font-size: 35px;
+}
+
+.card-text {
+  font-size: 21px;
+}
+
+.btn {
+  font-size: 21px;
+}
+
+.card-title {
+  height: 50px;
+}
+
+p.card-text {
+  height: 100px;
+}
+
+.loading-mode {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.delivery-box {
+  height: 21px;
+  margin-right: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 192, 1);
+  border-radius: 5px;
+  width: 25%;
+}
+
+.delivery-box h5 {
+  margin: 0px;
+  font-size: 14px;
+  margin-left: 4px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.restaurant-name {
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  color: white;
+}
+
+div.card-box {
+  height: 80px;
+  padding: 4px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+img.card-img-top {
+  max-height: 220px;
+}
+
+.account-image {
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  position: absolute;
+}
+
+.restaurant-name-box {
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  position: absolute;
+}
+
+.restaurant-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 4px 4px 12px rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .card-box {
+    width: 100%;
+  }
+
+  .container-init {
+    padding: 12px;
+  }
+
+  img.card-img-top {
+    max-height: 180px;
+  }
+
+  .restaurant-name-box {
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    position: absolute;
+  }
+
+  .account-image {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    position: absolute;
+  }
+
+  .delivery-box {
+    margin-right: 4px;
+  }
+
+  .delivery-box h5 {
+    margin: 0px;
+    font-size: 11px;
+    margin-left: 4px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+
+  .container-feed-grid {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .container-feed-grid {
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 8px;
+    row-gap: 8px;
+  }
+
+  .card-title {
+    font-size: 25px;
+  }
+
+  .card-text {
+    font-size: 21px;
+  }
+
+  .btn {
+    font-size: 21px;
+  }
+}

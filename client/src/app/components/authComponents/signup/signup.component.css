@@ -1,0 +1,32 @@
+.container-init {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-form {
+  height: 500px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 25px;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
+  box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
+  margin: 0px 12px 0px 12px;
+}
+
+@media screen and (max-width: 500px) {
+  .container-init {
+    display: block;
+  }
+
+  .auth-form {
+    height: 350px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
