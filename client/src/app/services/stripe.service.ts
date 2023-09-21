@@ -5,8 +5,7 @@ import { CartStorageService } from './cart-storage.service';
 import { map } from 'rxjs';
 import { loadStripe } from '@stripe/stripe-js';
 
-const baseURL = 'http://localhost:3000/stripe';
-//const baseURL = `https://testserver2-hcc6.onrender.com/stripe`;
+const baseURL = 'https://foodappserver-lvot.onrender.com/stripe';
 
 @Injectable({
   providedIn: 'root',

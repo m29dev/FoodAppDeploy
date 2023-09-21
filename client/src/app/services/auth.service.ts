@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { LocalStorageService } from './local-storage.service';
 
-const baseURL = `http://localhost:3000/auth/`;
+const baseURL = `https://foodappserver-lvot.onrender.com/auth/`;
 
 @Injectable({
   providedIn: 'root',

@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
-const baseURL = 'http://localhost:3000/restaurants';
-//const baseURL = `https://testserver2-hcc6.onrender.com/restaurants`;
+const baseURL = 'https://foodappserver-lvot.onrender.com/restaurants';
 
 @Injectable({
   providedIn: 'root',
