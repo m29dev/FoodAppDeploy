@@ -8,6 +8,10 @@ h2 {
   padding: 0px 8px 0px 8px;
 }
 
+h5 {
+  font-family: "Kalam", cursive;
+}
+
 .container-init {
   padding: 0px 0px 0px 12px;
 }
