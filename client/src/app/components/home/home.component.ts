@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { RestaurantsService } from 'src/app/services/restaurants.service';
 
 @Component({
@@ -7,19 +9,16 @@ import { RestaurantsService } from 'src/app/services/restaurants.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private restaurants: RestaurantsService) {}
+  constructor(private storage: LocalStorageService, private router: Router) {}
 
-  restaurantsAll: any;
-
-  onRestaurantClick(restaurant: any) {
-    console.log(restaurant);
+  onClick() {
+    this.router.navigate(['signin']);
   }
 
   ngOnInit(): void {
-    //get ALL restaurants
-    this.restaurants.getRestaurants().subscribe((res: any) => {
-      console.log(res.data);
-      this.restaurantsAll = res.data;
-    });
+    if (this.storage.getUserInfo()) {
+      console.log('user is logges in');
+      this.router.navigate(['restaurants']);
+    }
   }
 }

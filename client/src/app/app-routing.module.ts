@@ -11,9 +11,10 @@ import { CheckoutCancelComponent } from './components/checkout-cancel/checkout-c
 import { checkoutGuardGuard } from './guard/checkout-guard.guard';
 import { OrdersComponent } from './components/orders/orders.component';
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'restaurants', pathMatch: 'full' },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'signin', component: SignInComponent },
   { path: 'signup', component: SignUpComponent },
   {

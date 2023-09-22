@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   cartNumber: any;
 
   onHomeClick() {
-    this.router.navigate(['restaurants']);
+    this.router.navigate(['']);
   }
 
   onSignIn() {

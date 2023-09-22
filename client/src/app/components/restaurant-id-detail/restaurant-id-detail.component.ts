@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartStorageService } from 'src/app/services/cart-storage.service';
 import { RestaurantsService } from 'src/app/services/restaurants.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-restaurant-id-detail',
@@ -14,7 +15,8 @@ export class RestaurantIdDetailComponent implements OnInit {
     private restaurants: RestaurantsService,
     private activeRoute: ActivatedRoute,
     private cartStorage: CartStorageService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private toast: ToastService
   ) {}
 
   restaurantDetail: any;
@@ -26,6 +28,8 @@ export class RestaurantIdDetailComponent implements OnInit {
       '',
       `${data.name} x${quantity.value} added to the cart`
     );
+
+    this.toast.show('I am a standard toast');
   }
 
   onPlus(ref: any) {

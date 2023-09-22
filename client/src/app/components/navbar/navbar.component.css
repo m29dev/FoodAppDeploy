@@ -35,6 +35,16 @@
 
 .btn {
   margin-left: 12px;
+  font-family: "Kalam", cursive;
+}
+
+.btn-second {
+  background-color: rgb(255, 192, 1);
+  border: 0px;
+  color: black;
+  -webkit-box-shadow: 1px 1px 21px 0px rgba(44, 44, 45, 1);
+  -moz-box-shadow: 1px 1px 21px 0px rgba(44, 44, 45, 1);
+  box-shadow: 1px 1px 3px 0px rgba(44, 44, 45, 1);
 }
 
 .sign-out {

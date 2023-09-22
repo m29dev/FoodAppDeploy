@@ -1,50 +1,48 @@
-.container-fluid {
-  max-width: 1000px;
-}
-
-.container-feed-grid {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  column-gap: 4px;
-  row-gap: 4px;
-}
-
-/*
-.item-grid {
-  cursor: pointer;
-} */
-
-.item-grid img {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* defining the aspect ratio of the image */
-  object-fit: cover; /* making sure the image isn't distorted */
-}
-
-/* .card {
-  height: 500px;
+.title-box {
+  font-family: "Chewy", cursive;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-} */
-
-.card-title {
-  height: 50px;
+  justify-content: center;
+  align-items: center;
+  font-size: 9vw;
+  /* nth */
 }
 
-p.card-text {
-  height: 100px;
+.navbar-brand {
+  color: rgb(255, 192, 1);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  font-size: 12vw;
+  padding: 8px;
 }
 
-@media screen and (max-width: 770px) {
-  .card-title {
-    font-size: 16px;
-  }
+.txt-black {
+  font-family: "Chewy", cursive;
+  font-size: 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .card-text {
-    font-size: 12px;
-  }
+.txt-primary {
+  font-family: "Chewy", cursive;
+  font-size: 4vw;
+  color: rgb(255, 192, 1);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  padding: 8px;
+}
 
-  .btn {
-    font-size: 12px;
-  }
+.arrow {
+  width: 4vw;
+  height: 4vw;
+  margin-left: 1%;
+  color: rgb(255, 192, 1);
+}
+
+.action {
+  transition: 1s ease-out;
+  cursor: pointer;
+  /* nth */
+}
+
+.action:hover {
+  transform: scale(1.1);
 }

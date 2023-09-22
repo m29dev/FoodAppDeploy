@@ -1,6 +1,7 @@
 .container-init {
   display: flex;
   justify-content: center;
+  font-family: "Kalam", cursive;
 }
 
 .auth-form {

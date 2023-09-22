@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -24,6 +24,7 @@ import { CheckoutCancelComponent } from './components/checkout-cancel/checkout-c
 import { OrdersComponent } from './components/orders/orders.component';
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ToastBoxComponent } from './components/toast-box/toast-box.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { FooterComponent } from './components/footer/footer.component';
     OrdersComponent,
     UserOrdersComponent,
     FooterComponent,
+    ToastBoxComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     AppRoutingModule,
     CommonModule,
+    NgbToastModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
   ],

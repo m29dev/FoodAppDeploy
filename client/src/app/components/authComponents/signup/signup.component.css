@@ -1,6 +1,7 @@
 .container-init {
   display: flex;
   justify-content: center;
+  font-family: "Kalam", cursive;
 }
 
 .auth-form {
@@ -15,6 +16,12 @@
   -moz-box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
   box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
   margin: 0px 12px 0px 12px;
+}
+
+.btn {
+  background-color: rgb(255, 192, 1);
+  border: 0px;
+  color: black;
 }
 
 @media screen and (max-width: 500px) {
