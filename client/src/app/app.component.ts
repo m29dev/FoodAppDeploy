@@ -9,6 +9,7 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   title = 'client';
+  isServerOnline = true;
 
   onActivate(event: any) {
     window.scroll({
@@ -25,8 +26,18 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pingServer().subscribe((res) => {
-      console.log(res);
+    this.pingServer().subscribe({
+      next: (res) => {
+        console.log('new res: ', res);
+        this.isServerOnline = true;
+      },
+      error: (err) => {
+        console.log('new error: ', err);
+        if (err) {
+          console.log('display text to wait');
+          this.isServerOnline = false;
+        }
+      },
     });
   }
 }
