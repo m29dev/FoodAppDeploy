@@ -16,8 +16,6 @@ export class SignInComponent {
   ) {}
 
   onSubmit(authData: any) {
-    console.log('sign in');
-
     this.auth.signIn(authData.value.email, authData.value.password).subscribe({
       next: (res) => {
         authData.reset();

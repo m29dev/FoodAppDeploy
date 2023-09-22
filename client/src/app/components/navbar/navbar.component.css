@@ -25,6 +25,11 @@
   height: 25px;
 }
 
+.btn {
+  /* width: 25px;
+  height: 25px; */
+}
+
 .container-fluid {
   padding: 0px 100px;
 }

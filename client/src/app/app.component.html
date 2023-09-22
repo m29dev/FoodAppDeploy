@@ -1,10 +1,10 @@
 <app-navbar></app-navbar>
 <div class="box-outer">
-  <div class="box-inner" *ngIf="isServerOnline">
+  <div class="box-inner">
     <router-outlet (activate)="onActivate($event)"></router-outlet>
   </div>
 
-  <div class="container-fluid container-init" *ngIf="!isServerOnline">
+  <!-- <div class="container-fluid container-init">
     <div class="box-spinner">
       <div class="sr-only spinner-border spinner" role="status"></div>
     </div>
@@ -12,7 +12,7 @@
     <h6>
       server is deployd on Render.com and it gets shut down due to inactivity.
     </h6>
-  </div>
+  </div> -->
 </div>
 
 <div class="box-footer">

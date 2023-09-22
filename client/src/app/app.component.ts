@@ -9,7 +9,6 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   title = 'client';
-  isServerOnline = true;
 
   onActivate(event: any) {
     window.scroll({
