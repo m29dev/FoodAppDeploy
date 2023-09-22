@@ -22,7 +22,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  /* nth */
+  padding: 12px;
 }
 
 .navbar-brand {
