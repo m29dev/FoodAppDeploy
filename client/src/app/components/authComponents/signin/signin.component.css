@@ -29,4 +29,9 @@
     flex-direction: column;
     justify-content: space-around;
   }
+
+  .auth-form {
+    border: 0px;
+    box-shadow: 0px;
+  }
 }
