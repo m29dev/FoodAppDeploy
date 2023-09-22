@@ -19,6 +19,7 @@
 .title-box {
   font-family: "Chewy", cursive;
   display: flex;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
   /* nth */
