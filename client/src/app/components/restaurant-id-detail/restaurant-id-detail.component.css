@@ -20,11 +20,32 @@
   row-gap: 18px;
 }
 
-.card-box {
-  height: 100px;
+.delivery-box {
+  height: 21px;
+  margin-right: 12px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  background-color: rgb(255, 192, 1);
+  border-radius: 5px;
+  width: 25%;
+}
+
+.delivery-box h5 {
+  font-family: "Kalam", cursive;
+  margin: 0px;
+  font-size: 14px;
+  margin-left: 4px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+div.card-box {
+  height: 80px;
+  padding: 4px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .details-box {
@@ -115,12 +136,6 @@ svg.bi.bi-plus {
   background-color: rgb(191, 190, 190);
 }
 
-.card,
-.card-img-top {
-  border-radius: 0px;
-  border: 0px;
-}
-
 .restaurant-name-box {
   width: 100%;
   position: absolute;
@@ -150,6 +165,16 @@ svg.bi.bi-plus {
 }
 
 @media screen and (max-width: 500px) {
+  .delivery-box h5 {
+    font-size: 11px;
+  }
+
+  .card,
+  .card-img-top {
+    border-radius: 0px;
+    border: 0px;
+  }
+
   img.card-img-top {
     max-height: 220px;
   }
@@ -188,7 +213,7 @@ svg.bi.bi-plus {
 
   .account-image {
     position: absolute;
-    top: 63%;
+    top: 67%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;

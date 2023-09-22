@@ -64,14 +64,13 @@ p.card-text {
 }
 
 .delivery-box {
-  height: 21px;
+  padding: 4px 8px;
   margin-right: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(255, 192, 1);
   border-radius: 5px;
-  width: 25%;
 }
 
 .delivery-box h5 {
