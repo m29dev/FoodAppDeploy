@@ -11,9 +11,9 @@ export class CartStorageService {
 
   cartNumber() {
     let testNum: any = [];
-    this.getCart().forEach((res: any) => {
-      res.items.forEach((item: any) => {
-        for (let i = 1; i <= item.quantity; i++) {
+    this.getCart()?.forEach((res: any) => {
+      res.items?.forEach((item: any) => {
+        for (let i = 1; i <= item?.quantity; i++) {
           testNum.push(item);
         }
       });
