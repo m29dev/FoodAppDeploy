@@ -30,26 +30,6 @@ Here're some of the project's best features:
 <h2>Project Screenshots</h2>
 will add
 
-<h2>🛠️ Installation Steps</h2>
-
-<p>1. in project directory run terminal command:</p>
-
-```
-npm run startServer
-```
-
-<p>2. then in new terminal run command:</p>
-
-```
-npm run startClient
-```
-
-<p>3. then to open SocialCloud site just click <a href="http://localhost:4200"> here </a> or copy link below to your browser:</p>
-
-```
-http://localhost:4200
-```
-
 <h2>Test Account</h2>
 
 <p>login:</p>
