@@ -14,7 +14,8 @@ import { UserOrdersComponent } from './components/user-orders/user-orders.compon
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, pathMatch: 'full' },
   { path: 'signin', component: SignInComponent },
   { path: 'signup', component: SignUpComponent },
   {
@@ -52,7 +53,7 @@ const routes: Routes = [
     component: CheckoutCancelComponent,
     canActivate: [authGuardGuard],
   },
-  { path: '', component: HomeComponent },
+  { path: '**', component: HomeComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
