@@ -19,6 +19,7 @@
 }
 
 .type-box {
+  width: 100%;
   margin-top: 12px;
   display: flex;
   justify-content: space-around;
@@ -59,5 +60,9 @@
 
   .search-bar {
     margin: 0px;
+  }
+
+  .type-box {
+    margin-top: 20px;
   }
 }
