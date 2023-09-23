@@ -1,6 +1,9 @@
 <h1 id="title">FoodApp: MEAN full-stack app</h1>
 <p id="description">FoodApp is a food order application with online payments functionality (uber eats / glovo type of app).</p>
-<p id="description"> Full responsive layout for mobile devices. </p>
+
+<h2>🚀 Demo</h2>
+
+[https://foodappclient.onrender.com](https://foodappclient.onrender.com)
 
 <h2>💻 Built with</h2>
 
@@ -22,6 +25,7 @@ Here're some of the project's best features:
 *   add / remove products to / from the cart
 *   change quantity of the products in the cart
 *   online payments configured and provided with Stripe
+*   responsive layout for mobile devices
 
 <h2>Project Screenshots</h2>
 will add
