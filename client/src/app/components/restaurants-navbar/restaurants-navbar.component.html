@@ -9,145 +9,58 @@
     (input)="onChange(searchBar)"
   />
 
-  <!-- type items filter -->
-  <div id="carouselType" class="carousel slide slide-box">
-    <!-- button previous page -->
-    <div class="btn" data-bs-target="#carouselType" data-bs-slide="prev">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
-        fill="currentColor"
-        class="bi bi-arrow-left-circle"
-        viewBox="0 0 16 16"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
-        />
-      </svg>
+  <div class="type-box">
+    <!-- pizza -->
+    <div
+      #itemPizza
+      name="pizza"
+      class="item pizza"
+      (click)="activateItemFilter(itemPizza, 'pizza')"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/6978/6978255.png"
+        alt=""
+      />
+      pizza
     </div>
 
-    <!-- items -->
-    <div class="carousel-inner">
-      <!-- first page of food types -->
-      <div class="carousel-item active">
-        <div class="type-box">
-          <!-- pizza -->
-          <div
-            #itemPizza
-            name="pizza"
-            class="item pizza"
-            (click)="activateItemFilter(itemPizza, 'pizza')"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/6978/6978255.png"
-              alt=""
-            />
-            pizza
-          </div>
-
-          <!-- burger -->
-          <div
-            #itemBurger
-            name="burger"
-            class="item burger"
-            (click)="activateItemFilter(itemBurger, 'burger')"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/198/198416.png"
-              alt=""
-            />
-            burger
-          </div>
-
-          <!-- kebab -->
-          <div
-            #itemKebab
-            name="kebab"
-            class="item kebab"
-            (click)="activateItemFilter(itemKebab, 'kebab')"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2836/2836575.png"
-              alt=""
-            />
-            kebab
-          </div>
-
-          <!-- asian -->
-          <div
-            #itemAsian
-            name="asian"
-            class="item asian"
-            (click)="activateItemFilter(itemAsian, 'asian')"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1046/1046791.png"
-              alt=""
-            />
-            asian
-          </div>
-        </div>
-      </div>
-
-      <!-- second page -->
-      <div class="carousel-item">
-        <div class="type-box">
-          <!-- pizza -->
-          <div class="item pizza">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/6978/6978255.png"
-              alt=""
-            />
-            pizza
-          </div>
-
-          <!-- burger -->
-          <div class="item burger">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/198/198416.png"
-              alt=""
-            />
-            burger
-          </div>
-
-          <!-- kebab -->
-          <div class="item kebab">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/2836/2836575.png"
-              alt=""
-            />
-            kebab
-          </div>
-
-          <!-- asian -->
-          <div class="item asian">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1046/1046791.png"
-              alt=""
-            />
-            asian
-          </div>
-        </div>
-      </div>
+    <!-- burger -->
+    <div
+      #itemBurger
+      name="burger"
+      class="item burger"
+      (click)="activateItemFilter(itemBurger, 'burger')"
+    >
+      <img src="https://cdn-icons-png.flaticon.com/512/198/198416.png" alt="" />
+      burger
     </div>
 
-    <!-- next page -->
-    <div class="btn" data-bs-target="#carouselType" data-bs-slide="next">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
-        fill="currentColor"
-        class="bi bi-arrow-right-circle"
-        viewBox="0 0 16 16"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
-        />
-      </svg>
+    <!-- kebab -->
+    <div
+      #itemKebab
+      name="kebab"
+      class="item kebab"
+      (click)="activateItemFilter(itemKebab, 'kebab')"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/2836/2836575.png"
+        alt=""
+      />
+      kebab
+    </div>
+
+    <!-- asian -->
+    <div
+      #itemAsian
+      name="asian"
+      class="item asian"
+      (click)="activateItemFilter(itemAsian, 'asian')"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1046/1046791.png"
+        alt=""
+      />
+      asian
     </div>
   </div>
 </div>
