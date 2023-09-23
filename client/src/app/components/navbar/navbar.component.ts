@@ -69,7 +69,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     //set cart on init
     this.cartNumber = this.cartStorage.cartNumber();
 
-    //update cart when cart has changed
+    //update cart when cart has been updated
     this.cartStorage.onChange.subscribe((cart) => {
       this.cartNumber = this.cartStorage.cartNumber();
     });
