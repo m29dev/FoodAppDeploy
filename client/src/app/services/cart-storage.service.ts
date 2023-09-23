@@ -9,37 +9,17 @@ export class CartStorageService {
 
   onChange = new Subject<any>();
 
-  // addToCart(item: any) {
-  //   const currCart = this.getCart();
-  //   let doesContain = false;
-
-  //   //check if item has been already added to the cart
-  //   currCart?.forEach((res: any) => {
-  //     if (res.name === item.name) {
-  //       doesContain = true;
-  //       if (+res.quantity + +item.quantity > 19) {
-  //         res.quantity = 19;
-  //       } else {
-  //         res.quantity = +res.quantity + +item.quantity;
-  //       }
-  //     }
-  //   });
-
-  //   if (doesContain) {
-  //     localStorage.setItem('cart', JSON.stringify(currCart));
-  //     this.onChange.next(currCart);
-  //   }
-
-  //   if (!doesContain) {
-  //     let newCart;
-
-  //     if (currCart) newCart = [...currCart, item];
-  //     else newCart = [item];
-
-  //     localStorage.setItem('cart', JSON.stringify(newCart));
-  //     this.onChange.next(newCart);
-  //   }
-  // }
+  cartNumber() {
+    let testNum: any = [];
+    this.getCart().forEach((res: any) => {
+      res.items.forEach((item: any) => {
+        for (let i = 1; i <= item.quantity; i++) {
+          testNum.push(item);
+        }
+      });
+    });
+    return testNum;
+  }
 
   addToCart(item: any) {
     let currCart = this.getCart();
@@ -91,25 +71,9 @@ export class CartStorageService {
     this.onChange.next(currCart);
   }
 
-  // updateQuantity(item: any) {
-  //   const currCart = this.getCart();
-  //   currCart.forEach((res: any) => {
-  //     if (res.name === item.name) {
-  //       res.quantity = item.quantity;
-  //     }
-  //   });
-  //   localStorage.setItem('cart', JSON.stringify(currCart));
-  //   this.onChange.next(currCart);
-  // }
-
   updateQuantity(item: any) {
     let currCart = this.getCart();
 
-    // currCart.forEach((res: any) => {
-    //   if (res.name === item.name) {
-    //     res.quantity = item.quantity;
-    //   }
-    // });
     currCart.forEach((restaurant: any) => {
       if (restaurant.restaurant === item.restaurant) {
         restaurant.items.forEach((res: any) => {
@@ -130,17 +94,6 @@ export class CartStorageService {
     return JSON.parse(cart);
   }
 
-  // removeItem(item: any) {
-  //   const currCart = this.getCart();
-
-  //   let arr: any = [];
-  //   currCart.forEach((cartItem: any) => {
-  //     if (cartItem.name !== item.name) arr.push(cartItem);
-  //   });
-
-  //   localStorage.setItem('cart', JSON.stringify(arr));
-  //   this.onChange.next(arr);
-  // }
   removeItem(item: any) {
     let currCart = this.getCart();
 
