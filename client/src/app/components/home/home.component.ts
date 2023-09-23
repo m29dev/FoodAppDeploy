@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.storage.getUserInfo()) {
-      console.log('user is logges in');
       this.router.navigate(['restaurants']);
     }
   }

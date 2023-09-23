@@ -31,6 +31,7 @@ hr {
   background-color: rgb(255, 192, 1);
   border: 0px;
   color: black;
+  font-family: "Kalam", cursive;
   -webkit-box-shadow: 1px 1px 21px 0px rgba(44, 44, 45, 1);
   -moz-box-shadow: 1px 1px 21px 0px rgba(44, 44, 45, 1);
   box-shadow: 1px 1px 3px 0px rgba(44, 44, 45, 1);

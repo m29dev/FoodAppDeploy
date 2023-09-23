@@ -79,6 +79,16 @@
   margin-right: 18px;
 }
 
+.box-dp {
+  display: flex;
+  align-items: center;
+  font-family: "Kalam", cursive;
+}
+
+.box-dp svg {
+  margin-right: 12px;
+}
+
 @media screen and (max-width: 500px) {
   .container-fluid {
     padding: 0px 12px;

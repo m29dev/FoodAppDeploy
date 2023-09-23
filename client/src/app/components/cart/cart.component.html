@@ -158,7 +158,10 @@
         <div class="col-lg-12 col-md-12 col-12 mob">
           <!-- cart navbar -->
           <div class="cart-navbar">
-            <h1>Cart</h1>
+            <div class="title-box">
+              <a class="navbar-brand">Cart</a>
+            </div>
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="35"
@@ -392,7 +395,9 @@
       <!-- submit order -->
       <div class="row mt-4 d-flex align-items-center" *ngIf="cart && !sidebar">
         <div class="col-sm-6 order-md-2 text-right">
-          <a class="btn btn-primary mb-4 btn-lg pl-5 pr-5" (click)="onBuy()"
+          <a
+            class="btn btn-dark mb-4 btn-lg pl-5 pr-5 btn-second"
+            (click)="onBuy()"
             >Payment</a
           >
         </div>
@@ -405,7 +410,7 @@
       >
         <div class="col-sm-6 order-md-2 text-right">
           <a
-            class="btn btn-primary mb-4 btn-lg pl-5 pr-5"
+            class="btn btn-dark mb-4 btn-lg pl-5 pr-5 btn-second"
             (click)="onCheckout()"
             >Checkout</a
           >
