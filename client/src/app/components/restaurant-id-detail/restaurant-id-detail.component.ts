@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartStorageService } from 'src/app/services/cart-storage.service';
 import { RestaurantsService } from 'src/app/services/restaurants.service';
@@ -16,7 +16,8 @@ export class RestaurantIdDetailComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     private cartStorage: CartStorageService,
     private toastr: ToastrService,
-    private toast: ToastService
+    private toast: ToastService,
+    private router: Router
   ) {}
 
   restaurantDetail: any;
@@ -45,8 +46,14 @@ export class RestaurantIdDetailComponent implements OnInit {
     this.activeRoute.paramMap.subscribe((res: any) => {
       const id = res.params.id;
 
-      this.restaurants.getRestaurant(id).subscribe((data) => {
-        this.restaurantDetail = data;
+      this.restaurants.getRestaurant(id).subscribe({
+        next: (data: any) => {
+          this.restaurantDetail = data;
+        },
+        error: (err) => {
+          console.log(err);
+          this.router.navigate(['home']);
+        },
       });
     });
   }

@@ -13,7 +13,6 @@ const get_restaurants = async (req, res) => {
 const get_restaurants_id = async (req, res) => {
     try {
         const id = req.params.id
-        console.log(id)
 
         const restaurant = await Restaurant.findById({ _id: id })
         if (!restaurant)
