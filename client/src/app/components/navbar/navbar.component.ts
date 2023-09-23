@@ -67,11 +67,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
     });
 
     //set cart on init
-    this.cartNumber = this.cartStorage.getCart();
+    this.cartStorage.getCart().forEach((res: any) => {
+      this.cartNumber = +this.cartNumber + +res.items.length;
+    });
 
     //update cart when cart has changed
-    this.cartStorage.onChange.subscribe((res) => {
-      this.cartNumber = res;
+    this.cartStorage.onChange.subscribe((cart) => {
+      //res === new cart
+      cart.forEach((res: any) => {
+        this.cartNumber = +this.cartNumber + +res.items.length;
+      });
     });
   }
   ngOnDestroy(): void {
