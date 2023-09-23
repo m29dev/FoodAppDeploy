@@ -52,6 +52,7 @@ const routes: Routes = [
     component: CheckoutCancelComponent,
     canActivate: [authGuardGuard],
   },
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
