@@ -32,7 +32,7 @@ const get_orders = async (req, res) => {
 const get_user_order = async (req, res) => {
     try {
         const email = req.params.email
-        const userOrders = await Order.find({ email }).sort({})
+        const userOrders = await Order.find({ email }).sort({ date: -1 })
         res.status(200).json(userOrders)
     } catch (err) {
         console.log(err)
