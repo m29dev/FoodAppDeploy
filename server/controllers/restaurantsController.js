@@ -14,6 +14,9 @@ const get_restaurants_id = async (req, res) => {
     try {
         const id = req.params.id
 
+        if (id.length !== 24)
+            return res.status(400).json({ message: 'incorrect id' })
+
         const restaurant = await Restaurant.findById({ _id: id })
         if (!restaurant)
             return res.status(400).json({ message: 'restaurant no found' })
