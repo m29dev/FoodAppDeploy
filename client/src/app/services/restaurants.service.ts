@@ -44,8 +44,6 @@ export class RestaurantsService {
       });
     });
 
-    console.log(restaurantsType);
-
     this.onFilter.next(restaurantsType);
   }
 
