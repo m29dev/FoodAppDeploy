@@ -70,7 +70,10 @@ export class CartComponent implements OnInit {
     if (window.innerWidth <= 500) {
       this.sidebar = true;
     } else {
-      this.sidebar = false;
+      const cartElement: any = document.querySelector('.get-cart')?.clientWidth;
+      if (cartElement >= 700) {
+        this.sidebar = false;
+      }
     }
   }
 
