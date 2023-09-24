@@ -232,11 +232,24 @@
                         />
                       </div>
 
+                      <!-- sidebar mode -->
                       <!-- item name, item brand -->
-                      <div class="col-md-9 text-left mt-sm-2 item-name">
+                      <div
+                        class="col-md-9 text-left mt-sm-2 item-name"
+                        *ngIf="sidebar"
+                      >
                         <h4>
                           {{ item?.name | slice : 0 : 9 }}
                           {{ item?.name | slice : 9 }}
+                        </h4>
+                        <p class="font-weight-light">{{ item?.restaurant }}</p>
+                      </div>
+
+                      <!-- standard mode -->
+                      <!-- item name, item brand -->
+                      <div class="col-md-9 text-left mt-sm-2 item-name">
+                        <h4>
+                          {{ item?.name }}
                         </h4>
                         <p class="font-weight-light">{{ item?.restaurant }}</p>
                       </div>
