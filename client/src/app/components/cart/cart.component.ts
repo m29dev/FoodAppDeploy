@@ -84,5 +84,11 @@ export class CartComponent implements OnInit {
       this.fullPrice = 0;
       this.calcSubtotal();
     });
+
+    //if mobile screen detecter set display mode sidebar to true
+    if (window.innerWidth <= 500) {
+      this.sidebar = true;
+      console.log('width <= 500');
+    }
   }
 }
