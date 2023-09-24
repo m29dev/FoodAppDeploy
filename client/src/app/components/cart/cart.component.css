@@ -77,6 +77,10 @@ h5 {
   margin-left: 18px;
 }
 
+.item-name div {
+  max-width: 100px;
+}
+
 .quantity-box {
   display: flex;
   align-items: center;
