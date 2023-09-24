@@ -35,7 +35,7 @@
 
 .btn {
   margin-left: 12px;
-  font-family: "Kalam", cursive;
+  /* font-family: "Kalam", cursive; */
 }
 
 .btn-second {
@@ -82,7 +82,7 @@
 .box-dp {
   display: flex;
   align-items: center;
-  font-family: "Kalam", cursive;
+  /* font-family: "Kalam", cursive; */
 }
 
 .box-dp svg {
