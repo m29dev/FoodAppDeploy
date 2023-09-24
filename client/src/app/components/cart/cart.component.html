@@ -247,7 +247,10 @@
 
                       <!-- standard mode -->
                       <!-- item name, item brand -->
-                      <div class="col-md-9 text-left mt-sm-2 item-name">
+                      <div
+                        *ngIf="!sidebar"
+                        class="col-md-9 text-left mt-sm-2 item-name"
+                      >
                         <h4>
                           {{ item?.name }}
                         </h4>
