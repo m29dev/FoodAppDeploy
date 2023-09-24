@@ -16,7 +16,6 @@ export class RestaurantIdDetailComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     private cartStorage: CartStorageService,
     private toastr: ToastrService,
-    private toast: ToastService,
     private router: Router
   ) {}
 
@@ -25,9 +24,7 @@ export class RestaurantIdDetailComponent implements OnInit {
   onAddToCart(data: any, quantity: any) {
     data.quantity = quantity.value;
     this.cartStorage.addToCart(data);
-    this.toastr.info('', `${data.name} x${quantity.value}`);
-
-    this.toast.show('I am a standard toast');
+    this.toastr.success('', `${data.name} x${quantity.value}`);
   }
 
   onPlus(ref: any) {
