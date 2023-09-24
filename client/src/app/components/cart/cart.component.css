@@ -122,10 +122,6 @@ h5 {
     width: 100%;
   }
 
-  .navbar-brand {
-    font-size: 30px;
-  }
-
   .container-init {
     padding: 0px;
   }
@@ -138,6 +134,14 @@ h5 {
     margin: 0px;
     padding: 0px;
   }
+
+  h4 {
+    font-size: 17px;
+  }
+
+  /* .navbar-brand {
+    font-size: 30px;
+  } */
 }
 
 @media screen and (max-width: 770px) {
