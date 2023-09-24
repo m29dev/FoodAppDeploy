@@ -96,6 +96,8 @@ svg.bi.bi-plus {
 .item-info {
   margin-right: 18px;
   margin-left: 18px;
+  max-width: 40vw;
+  overflow-wrap: break-word;
 }
 
 .item-info-second {

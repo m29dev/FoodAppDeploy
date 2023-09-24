@@ -238,10 +238,21 @@
                         class="col-md-9 text-left mt-sm-2 item-name"
                         *ngIf="sidebar"
                       >
-                        <h4>
-                          {{ item?.name | slice : 0 : 9 }}
-                          {{ item?.name | slice : 9 }}
-                        </h4>
+                        <!-- item name length equal or greater than 12 chars -->
+                        <div *ngIf="item?.name.length >= 12">
+                          <h4 *ngFor="let word of item?.name.split(' ')">
+                            {{ word | slice : 0 : 12 }}
+                            {{ word | slice : 12 }}
+                          </h4>
+                        </div>
+
+                        <!-- item name length less than 12 chars -->
+                        <div>
+                          <h4 *ngIf="item?.name.length < 12">
+                            {{ item?.name }}
+                          </h4>
+                        </div>
+
                         <p class="font-weight-light">{{ item?.restaurant }}</p>
                       </div>
 
