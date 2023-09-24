@@ -25,7 +25,7 @@ export class RestaurantIdDetailComponent implements OnInit {
   onAddToCart(data: any, quantity: any) {
     data.quantity = quantity.value;
     this.cartStorage.addToCart(data);
-    this.toastr.success('', `${data.name} x${quantity.value}`);
+    this.toastr.info('', `${data.name} x${quantity.value}`);
 
     this.toast.show('I am a standard toast');
   }

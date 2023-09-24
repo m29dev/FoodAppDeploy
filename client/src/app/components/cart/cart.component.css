@@ -138,31 +138,6 @@ h5 {
     margin: 0px;
     padding: 0px;
   }
-
-  div.img-cart-box {
-    width: 80px;
-    height: 80px;
-  }
-
-  img.img-cart {
-    width: 80px;
-    height: 80px;
-  }
-
-  .item-name h4,
-  p {
-    font-size: 12px;
-  }
-
-  .price-style,
-  .quantity-value {
-    font-size: 18px;
-  }
-
-  svg {
-    width: 18px;
-    height: 18px;
-  }
 }
 
 @media screen and (max-width: 770px) {

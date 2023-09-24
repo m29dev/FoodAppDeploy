@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartStorageService } from 'src/app/services/cart-storage.service';
@@ -63,6 +63,15 @@ export class CartComponent implements OnInit {
         this.fullPrice += +item?.price * +item?.quantity;
       });
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (window.innerWidth <= 500) {
+      this.sidebar = true;
+    } else {
+      this.sidebar = false;
+    }
   }
 
   ngOnInit(): void {
