@@ -10,11 +10,17 @@
     </div>
 
     <div *ngIf="!userInfo">
-      <button type="button" class="btn btn-light" (click)="onSignIn()">
+      <button
+        type="button"
+        name="sign-in-btn"
+        class="btn btn-light"
+        (click)="onSignIn()"
+      >
         Sign in
       </button>
       <button
         type="button"
+        name="sign-up-btn"
         class="btn btn-dark btn-second"
         (click)="onSignUp()"
       >
@@ -24,7 +30,7 @@
 
     <div class="sign-out" *ngIf="userInfo">
       <!-- home btn -->
-      <button class="btn btn-light">
+      <button class="btn btn-light" name="sign-out-btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
@@ -41,7 +47,11 @@
       </button>
 
       <!-- cart btn -->
-      <button class="btn btn-light position-relative" (click)="onCartClick()">
+      <button
+        class="btn btn-light position-relative"
+        (click)="onCartClick()"
+        name="cart-btn"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
@@ -66,6 +76,7 @@
       <div class="dropdown">
         <button
           class="btn btn-light dropdown-toggle"
+          name="account-btn"
           type="button"
           data-bs-toggle="dropdown"
           aria-haspopup="true"
@@ -89,6 +100,7 @@
           <li>
             <button
               class="btn btn-dark dropdown-item dropdown-item-style box-dp"
+              name="orders-btn"
               (click)="onMyOrders()"
             >
               <svg
@@ -114,6 +126,7 @@
           <li>
             <button
               class="btn btn-dark dropdown-item dropdown-item-style box-dp"
+              name="sign-out-btn"
               (click)="onSignOut()"
             >
               <svg
