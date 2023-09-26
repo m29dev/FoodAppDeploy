@@ -46,17 +46,13 @@
     display: block;
   }
 
-  .auth-form,
-  .auth-form-test {
+  .auth-form {
+    height: 350px;
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     border: 0px;
     box-shadow: none !important;
-  }
-
-  .auth-form {
-    height: 350px;
   }
 }

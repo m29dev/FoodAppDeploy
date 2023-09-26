@@ -65,17 +65,17 @@ export class CartComponent implements OnInit {
     });
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    if (window.innerWidth <= 500) {
-      this.sidebar = true;
-    } else {
-      const cartElement: any = document.querySelector('.get-cart')?.clientWidth;
-      if (cartElement >= 700) {
-        this.sidebar = false;
-      }
-    }
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event: any) {
+  //   if (window.innerWidth <= 500) {
+  //     this.sidebar = true;
+  //   } else {
+  //     const cartElement: any = document.querySelector('.get-cart')?.clientWidth;
+  //     if (cartElement >= 700) {
+  //       this.sidebar = false;
+  //     }
+  //   }
+  // }
 
   ngOnInit(): void {
     this.cart = this.cartStorage.getCart();
@@ -89,9 +89,9 @@ export class CartComponent implements OnInit {
     });
 
     //if mobile screen detecter set display mode sidebar to true
-    if (window.innerWidth <= 500) {
-      this.sidebar = true;
-      console.log('width <= 500');
-    }
+    // if (window.innerWidth <= 500) {
+    //   this.sidebar = true;
+    //   console.log('width <= 500');
+    // }
   }
 }
