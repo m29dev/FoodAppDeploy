@@ -120,7 +120,9 @@ h2 {
 
 .container-box {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .test-info-box {
@@ -194,7 +196,11 @@ h2 {
 
   .test-info-box {
     width: 90vw;
-    margin: 0px;
+    margin: 12px;
+  }
+
+  .dropdown-info {
+    font-size: 25px;
   }
 }
 
