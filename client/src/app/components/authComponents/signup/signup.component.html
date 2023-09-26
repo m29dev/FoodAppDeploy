@@ -10,7 +10,13 @@
 
     <div class="">
       <label for="email" class="form-label">email</label>
-      <input type="email" class="form-control" name="email" ngModel />
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="email"
+        ngModel
+      />
     </div>
 
     <div class="">
@@ -20,6 +26,7 @@
         class="form-control"
         minlength="7"
         name="password"
+        id="password"
         ngModel
       />
       <div class="form-text">Password must be at least 7 characters long</div>
@@ -32,6 +39,7 @@
         class="form-control"
         minlength="7"
         name="passwordConfirm"
+        id="passwordConfirm"
         ngModel
       />
     </div>
