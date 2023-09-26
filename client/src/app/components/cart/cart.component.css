@@ -135,8 +135,7 @@ h2 {
   -webkit-box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
   -moz-box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
   box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
-  margin: 0px 12px 0px 12px;
-  margin-bottom: 30px;
+  margin: 30px 12px 30px 12px;
   padding: 12px;
 }
 
