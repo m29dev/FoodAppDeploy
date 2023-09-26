@@ -68,7 +68,7 @@ export class CartComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    if (window.innerWidth <= 500) {
+    if (window.innerWidth <= 700) {
       this.sidebar = true;
       this.cartMobileSidebar = true;
     } else {
