@@ -26,4 +26,15 @@ export class SignInComponent {
       },
     });
   }
+
+  onTestAccount() {
+    this.auth.signIn('test@gmail.com', '123').subscribe({
+      next: (res) => {
+        this.router.navigate(['restaurants']);
+      },
+      error: (err) => {
+        this.toastr.error('', 'error, try again later');
+      },
+    });
+  }
 }
