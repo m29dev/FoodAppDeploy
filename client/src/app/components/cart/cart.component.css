@@ -118,6 +118,35 @@ h2 {
   margin-right: 9px;
 }
 
+.container-box {
+  display: flex;
+  justify-content: center;
+}
+
+.test-info-box {
+  height: auto;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 25px;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
+  box-shadow: 8px 8px 24px 0px rgba(216, 216, 216, 1);
+  margin: 0px 12px 0px 12px;
+  margin-bottom: 30px;
+  padding: 12px;
+}
+
+.test-info-box h1 {
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+.test-info-item {
+  margin-bottom: 18px;
+}
+
 @media screen and (max-width: 500px) {
   section {
     width: 100%;
@@ -138,6 +167,11 @@ h2 {
 
   h4 {
     font-size: 17px;
+  }
+
+  .test-info-box {
+    width: 90vw;
+    margin: 0px;
   }
 }
 

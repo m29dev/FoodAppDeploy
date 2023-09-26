@@ -449,15 +449,38 @@
       </div>
 
       <!-- test card info -->
-      <div>
-        <h2>Test Card Details:</h2>
-        <!-- card number -->
-        <h3>Card Number:</h3>
-        4242 4242 4242 4242
-        <h3>MM / RR:</h3>
-        choose any future date f.e. 04/26
-        <h3>CVC:</h3>
-        any f.e. 123
+      <div
+        class="container container-box"
+        *ngIf="!sidebar || cartMobileSidebar"
+      >
+        <div class="test-info-box">
+          <h1 style="padding: 0px">Test Card Details</h1>
+
+          <!-- card number -->
+          <h3>Card Number:</h3>
+          <div class="test-info-item">
+            <input
+              #cardNumber
+              type="text"
+              value="4242 4242 4242 4242"
+              disabled
+            />
+            <button (click)="onCopy(cardNumber)">copy</button>
+          </div>
+
+          <!-- MM / RR -->
+          <h3>MM / RR:</h3>
+          <div class="test-info-item">
+            choose any future date e.g.
+            <input #cardNumber type="text" value="04 / 26" disabled />
+          </div>
+
+          <!-- CVC -->
+          <h3>CVC:</h3>
+          <div class="test-info-item">
+            any e.g. <input #cardNumber type="text" value="123" disabled />
+          </div>
+        </div>
       </div>
 
       <!-- go to the checkout -->

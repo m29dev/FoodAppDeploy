@@ -80,6 +80,15 @@ export class CartComponent implements OnInit {
     }
   }
 
+  onCopy(card: any) {
+    // Select the text field
+    card.select();
+    card.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(card.value);
+  }
+
   ngOnInit(): void {
     this.cart = this.cartStorage.getCart();
     this.calcSubtotal();
