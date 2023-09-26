@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
   ) {}
 
   @Input('sidebar') sidebar: boolean = false;
+  cartMobileSidebar: boolean = false;
   cart: any;
   fullPrice = 0;
 
@@ -65,17 +66,19 @@ export class CartComponent implements OnInit {
     });
   }
 
-  // @HostListener('window:resize', ['$event'])
-  // onResize(event: any) {
-  //   if (window.innerWidth <= 500) {
-  //     this.sidebar = true;
-  //   } else {
-  //     const cartElement: any = document.querySelector('.get-cart')?.clientWidth;
-  //     if (cartElement >= 700) {
-  //       this.sidebar = false;
-  //     }
-  //   }
-  // }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (window.innerWidth <= 500) {
+      this.sidebar = true;
+      this.cartMobileSidebar = true;
+    } else {
+      const cartElement: any = document.querySelector('.get-cart')?.clientWidth;
+      if (cartElement >= 700) {
+        this.sidebar = false;
+        this.cartMobileSidebar = false;
+      }
+    }
+  }
 
   ngOnInit(): void {
     this.cart = this.cartStorage.getCart();
@@ -89,9 +92,9 @@ export class CartComponent implements OnInit {
     });
 
     //if mobile screen detecter set display mode sidebar to true
-    // if (window.innerWidth <= 500) {
-    //   this.sidebar = true;
-    //   console.log('width <= 500');
-    // }
+    if (window.innerWidth <= 500) {
+      this.sidebar = true;
+      this.cartMobileSidebar = true;
+    }
   }
 }

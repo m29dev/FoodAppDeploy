@@ -423,7 +423,10 @@
       </div>
 
       <!-- submit order -->
-      <div class="row mt-4 d-flex align-items-center" *ngIf="cart && !sidebar">
+      <div
+        class="row mt-4 d-flex align-items-center"
+        *ngIf="cart && !sidebar && !cartMobileSidebar"
+      >
         <div class="col-sm-6 order-md-2 text-right">
           <a
             class="btn btn-dark mb-4 btn-lg pl-5 pr-5 btn-second"
@@ -431,18 +434,30 @@
             >Payment</a
           >
         </div>
+      </div>
 
-        <!-- test card info -->
-        <div>
-          <h2>Test Card Details:</h2>
-          <!-- card number -->
-          <h3>Card Number:</h3>
-          4242 4242 4242 4242
-          <h3>MM / RR:</h3>
-          choose any future date f.e. 04/26
-          <h3>CVC:</h3>
-          any f.e. 123
+      <!-- payment btn for mobile mode sidebar display style -->
+      <div
+        class="row mt-4 d-flex align-items-center"
+        *ngIf="cart && sidebar && cartMobileSidebar"
+      >
+        <div class="col-sm-6 order-md-2 text-right">
+          <a class="btn btn-primary mb-4 btn-lg pl-5 pr-5" (click)="onBuy()"
+            >Submit order</a
+          >
         </div>
+      </div>
+
+      <!-- test card info -->
+      <div>
+        <h2>Test Card Details:</h2>
+        <!-- card number -->
+        <h3>Card Number:</h3>
+        4242 4242 4242 4242
+        <h3>MM / RR:</h3>
+        choose any future date f.e. 04/26
+        <h3>CVC:</h3>
+        any f.e. 123
       </div>
 
       <!-- go to the checkout -->
