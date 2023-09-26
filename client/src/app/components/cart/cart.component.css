@@ -147,6 +147,29 @@ h2 {
   margin-bottom: 18px;
 }
 
+.dropdown-info {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.bi-arrow-style {
+  margin-left: 9px;
+  margin-top: 9px;
+}
+
+.dropdown-info h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 500px) {
   section {
     width: 100%;

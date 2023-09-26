@@ -452,7 +452,59 @@
         class="container container-box"
         *ngIf="!sidebar || cartMobileSidebar"
       >
-        <div class="test-info-box">
+        <!-- dropdown info toggle -->
+        <div class="dropdown-info" (click)="onDisplayInfoToggle()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="darkorange"
+            class="bi bi-info-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+            />
+          </svg>
+
+          TEST payments details
+
+          <!-- arrow up -->
+          <svg
+            *ngIf="!displayInfo"
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-caret-up bi-arrow-style"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"
+            />
+          </svg>
+
+          <!-- arrow down -->
+          <svg
+            *ngIf="displayInfo"
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-caret-down bi-arrow-style"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"
+            />
+          </svg>
+        </div>
+
+        <!-- info details -->
+        <div *ngIf="displayInfo" class="test-info-box">
           <h1 style="padding: 0px">Test Card Details</h1>
 
           <!-- card number -->
@@ -470,7 +522,7 @@
           <!-- MM / RR -->
           <h3>MM / RR:</h3>
           <div class="test-info-item">
-            any future date e.g.
+            choose any future date e.g.
             <input #cardNumber type="text" value="04 / 26" disabled />
           </div>
 

@@ -20,6 +20,7 @@ export class CartComponent implements OnInit {
   cartMobileSidebar: boolean = false;
   cart: any;
   fullPrice = 0;
+  displayInfo: boolean = false;
 
   onBuy() {
     if (this.cart)
@@ -87,6 +88,10 @@ export class CartComponent implements OnInit {
 
     // Copy the text inside the text field
     navigator.clipboard.writeText(card.value);
+  }
+
+  onDisplayInfoToggle() {
+    this.displayInfo = !this.displayInfo;
   }
 
   ngOnInit(): void {
