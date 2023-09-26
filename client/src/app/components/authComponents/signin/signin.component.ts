@@ -28,7 +28,7 @@ export class SignInComponent {
   }
 
   onTestAccount() {
-    this.auth.signIn('test@gmail.com', '123').subscribe({
+    this.auth.signIn('test@gmail.com', '1234567').subscribe({
       next: (res) => {
         this.router.navigate(['restaurants']);
       },
