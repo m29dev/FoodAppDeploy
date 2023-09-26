@@ -463,7 +463,7 @@
       <!-- go to the checkout -->
       <div
         class="row mt-4 d-flex align-items-center"
-        *ngIf="cart && sidebar && cart.length > 0"
+        *ngIf="cart && sidebar && cart.length > 0 && !cartMobileSidebar"
       >
         <div class="col-sm-6 order-md-2 text-right">
           <a
