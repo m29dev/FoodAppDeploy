@@ -1,5 +1,5 @@
 <h1 id="title">FoodApp: MEAN full-stack app</h1>
-<p id="description">FoodApp is a food ordering application with online payments functionality (uber eats / glovo lookalike).</p>
+<p id="description">FoodApp's a food delivery application with online payments feature (UberEats / Glov clone)</p>
 
 <h2>🚀 Demo</h2>
 
