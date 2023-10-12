@@ -25,6 +25,7 @@ Here're some of the project's best features:
 *   add / remove products to / from the cart
 *   change quantity of the products in the cart
 *   online payments configured and provided with Stripe
+*   orders history, link to the order's payment if it was canceled
 *   responsive layout for mobile devices
 
 <h2>Project Screenshots</h2>
