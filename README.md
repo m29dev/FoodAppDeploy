@@ -33,7 +33,7 @@ Here're some of the project's best features:
 welcome page </br>
 <img src="https://github.com/m29dev/FoodAppDeploy/assets/123384597/26b0d73f-cb06-49aa-a6b7-8af381e085d0" alt="project-screenshot" height="200">
 
-home page </br>
+restaurant </br>
 <img src="https://github.com/m29dev/FoodAppDeploy/assets/123384597/7d064c01-ccd8-496c-80a0-087c982f98a7" alt="project-screenshot" height="200">
 
 restaurants filtered by the food type (pizza, burger) </br>
@@ -54,7 +54,7 @@ orders history </br>
 <img src="https://github.com/m29dev/FoodAppDeploy/assets/123384597/70cc1667-7b09-4392-a73c-1292e14a96f9" alt="project-screenshot" height="200">
 
 2. MOBILE LAYOUT </br>
-home page </br>
+restaurants </br>
 <img src="https://github.com/m29dev/FoodAppDeploy/assets/123384597/856c2b62-45e6-4c79-b90d-1d8da33daf24" alt="project-screenshot" height="200">
 
 restaurant menu </br>
