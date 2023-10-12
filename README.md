@@ -29,7 +29,7 @@ Here're some of the project's best features:
 *   responsive layout for mobile devices
 
 <h2>Project Screenshots</h2>
-<h4>1. DESKTOP LAYOUT</h4> </br>
+<h4>1. DESKTOP LAYOUT</h4>
 1.1 Welcome page </br>
 <img src="https://github.com/m29dev/FoodAppDeploy/assets/123384597/26b0d73f-cb06-49aa-a6b7-8af381e085d0" alt="project-screenshot" height="200">
 
@@ -53,7 +53,7 @@ Here're some of the project's best features:
 1.7 Orders history </br>
 <img src="https://github.com/m29dev/FoodAppDeploy/assets/123384597/70cc1667-7b09-4392-a73c-1292e14a96f9" alt="project-screenshot" height="200">
 
-<h4>2. MOBILE LAYOUT</h4> </br>
+<h4>2. MOBILE LAYOUT</h4>
 2.1 Restaurants </br>
 <img src="https://github.com/m29dev/FoodAppDeploy/assets/123384597/856c2b62-45e6-4c79-b90d-1d8da33daf24" alt="project-screenshot" height="200">
 
